@@ -12,6 +12,7 @@ if location == "remote":
     os.system("tput setab {}".format(server_ip_background))
     Server_IP = input("Enter the server IP: ")
     print("\nChecking connection......")
+    IsPingable(Server_IP)
     os.system("sleep 2s")
 
 #We have to add a connection checking code here

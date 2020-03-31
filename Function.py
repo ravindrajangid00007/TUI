@@ -32,4 +32,20 @@ def Message():
     os.system("tput setaf {}".format(created_text))
     os.system("tput setab {}".format(created_background))
     print("\t\t\t     Created by PythonPingerZ     ")
+def IsPingable(Server_IP):
+   
+    os.system("ping -c 1 {}".format(Server_IP))
+    p=-1
+#out put of os.system cannot be stored in a 						variable so we use os.popen it will pop the 						output that can be stored in some variable
+#if p==0 the we can ping to each other 						otherwise not...
+    p=os.popen("echo $?").read()
+    print("this is {}".format(p))
+    
+    if p==0:
+        print("Now you can ale to do SSH to your Network")
+    else:
+        print("We are not able to ping to your provided IP")
+        os.system("tput setab {}".format(global_background))
+        exit() 
+    
 
